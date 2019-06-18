@@ -286,3 +286,358 @@ var myArray = ["Quincty", 1];
 console.log(myArray);
 
 //Nested arrays
+
+var myArray = [["Bulls", 23], ["White Sox"]];
+console.log(myArray);
+
+//Access Array Data with Indexes
+
+var myArray = [50,60,70];
+var myData = myArray[0];
+console.log(myData);
+
+//Modify array data with indexes
+
+var myArray = [18,64,99];
+myArray[1] = 45;
+console.log(myArray);
+
+//Access multi-dimensional arrays with indexes
+var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+var myData = myArray[2][1];
+console.log(myData);
+
+// Manipulate array with push()
+
+var myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog", 23]);
+console.log(myArray);
+
+// Manipulate array with pop()
+var myArray = [["John", 23], ["cat", 2]];
+var removedFromMyArray = myArray.pop();
+console.log(myArray);
+
+// Manipulate array with shift()
+var myArray = [["John", 23], ["cat", 2]];
+var removedFromMyArray = myArray.shift();
+console.log(myArray);
+
+// Manipulate array with unshift()
+var myArray = [["John", 23], ["cat", 2]];
+myArray.shift();
+myArray.unshift(["Paul", 35]);
+console.log(myArray);
+
+//Shopping list
+var myList = [["cereal",3], ["milk", 2], ["juice", 2], ["eggs", 12]];
+console.log(myList);
+
+//Write Reusable code with functions
+function ourReusableFunction() {
+  console.log("Heya, World");
+}
+
+ourReusableFunction();
+
+//Passing values to functions with arguments
+function functionWithArgs(a,b) {
+  console.log(a-b);
+}
+
+functionWithArgs(10, 5);
+
+// Global scope and functions
+var myGlobal = 10;
+
+function fun1() {
+  oopsGlobal = 5;
+}
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+fun1();
+fun2();
+
+// local scope and functions
+function myLocalScope() {
+  var myVar = 5;
+  console.log(myVar);
+}
+myLocalScope();
+
+// Global vs local scope and functions
+var outerWear = "T-Shirt";
+
+function myOutfit() {
+  var outerWear = "sweater";
+  return outerWear;
+}
+
+console.log(myOutfit());
+console.log(outerWear)
+
+// Return a value from a Function with Return
+function minusSeven(num) {
+  return num -7;
+}
+
+console.log(minusSeven(10));
+
+function timesFive(num) {
+  return num * 5;
+}
+console.log(timesFive(5));
+
+// Understanding Undefined value returned from a function
+
+var sum = 0;
+function addThree() {
+  sum += 3;
+}
+
+console.log(addThree(6));
+
+//Assignment with a Returned Value
+var changed = 0;
+
+function change(num) {
+  return (num + 5)/3;
+}
+
+changed = change(10);
+
+var processed = 0;
+
+function processArg(num) {
+  return (num +3)/5;
+}
+
+processed = processArg(7)
+console.log(processed)
+
+// Stand in line
+
+function nextInLine(arr, item) {
+  arr.push(item)
+  return arr.shift(); //removes and returns first item which is 1
+}
+
+var testArr = [1,2,3,4,5];
+
+console.log("Before:" + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
+//Boolean values
+function ourTrueorFalse(isItTrue) {
+  if (isItTrue) {
+    return "Yes, that is true";
+  }
+  return "No, it is false";
+}
+console.log(ourTrueorFalse(true));
+
+// Comparison with the Equality Operator
+
+function testEqual(val) {
+  if (val == 12) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+console.log(testEqual(10));
+
+//Comparison with the strict equality operator
+
+function testStrict(val) {
+  if (val === 7) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
+console.log(testStrict(10));
+
+//Practice comparing different values
+function compareEquality(a,b) {
+  if (a == b){
+    return "Equal";
+  }
+  return "Not Equal";
+}
+console.log(compareEquality(10, "10"));
+
+// Comparison with the inequality operator
+function testNotEqual(val) {
+  if (val != 99) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+console.log(testNotEqual(10));
+
+// Comparison with the Strict Inequality operator
+function testStrictNotEqual(val) {
+  if (val != 17) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+console.log(testStrictNotEqual(10));
+
+// Comparisons with the logical and operators
+function testGreaterThan(val) {
+  if (val > 100) {
+    return "Over 100";
+  }
+  if (val > 10) {
+    return "Over 10";
+  }
+  return "10 or Under";
+}
+console.log(testGreaterThan(10));
+
+//Comparison with Greater than or Equal to Operator
+function testGreaterOrEqual(val) {
+  if (val >= 20) {
+    return "20 or Over";
+  }
+  if (val >= 10) {
+    return "10 or Over";
+  }
+  return "Less than 10";
+}
+console.log(testGreaterOrEqual(10));
+
+//Comparison with the less than operator
+function testLessThan(val) {
+  if (val < 20) {
+    return "Under 25";
+  }
+  if (val < 55) {
+    return "Under 55";
+  }
+  return "55 or Over";
+}
+console.log(testLessThan(10));
+
+// Comparison with the less than or equal to operator
+function testLessOrEqual(val) {
+  if (val < 12) {
+    return "Smaller Than  or Equal to 12";
+  }
+  if (val <= 24) {
+    return "Smaller Than or Equal to 24";
+  }
+  return "More than 24";
+}
+console.log(testLessOrEqual(10));
+
+// Comparisons with the logical and operator
+
+function testLogicalAnd(val) {
+  if (val <= 50 && val >= 25) {
+    return "Yes";
+  }
+  return "No";
+}
+console.log(testLogicalAnd(29));
+
+// Comparisons with the logical or operator
+function testLogicalOr(val) {
+  if (val < 10 || val>20) {
+    return "Outside";
+  }
+
+  return "Inside";
+}
+
+console.log(testLogicalOr(15));
+
+//Else statements
+function testElse(val) {
+  var result = "";
+  if (val > 5) {
+    result = "Bigger than 5";
+  } else {
+    result = "5 or Smaller";
+  } 
+  return result;
+  }
+  console.log(testElse(66));
+
+// Else if statements
+function testElseIf(val) {
+  if (val > 10) {
+    return "Greater than 10";
+  } else if (val < 5) {
+    return "Smaller than 5";
+  } else {
+    return "Between 5 and 10";
+  }
+  
+}
+console.log(testElseIf(7));
+
+// Logical order in If else statements
+function orderMyLogic(val) {
+  if (val < 5) {
+    return "Less than 5";
+  } else if (val < 5) {
+    return "Less than 10";
+  } else {
+    return "Greater than or equal to 10";
+  }
+}
+console.log(orderMyLogic(3));
+
+// Chaining if Else Statements
+
+function testSize(num) {
+  if (num < 5) {
+    return "Tiny";
+  } else if (num < 10) {
+    return "Small";
+  } else if (num < 15) {
+    return "Medium";
+  } else if (num < 20) {
+    return "Large";
+  } else {
+    return "Huge";
+  }
+}
+console.log(testSize(99));
+
+// Golf code
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home"]
+function golfScore(par, strokes) {
+  if (strokes == 1) {
+    return names[0];
+  } else if (strokes <= par - 2) {
+    return names[1];
+  } else if (strokes <= par - 1) {
+    return names[2];
+  } else if (strokes == par) {
+    return names[3];
+  } else if (strokes == par + 1) {
+    return names[2];
+  } else if (strokes == par) {
+    return names[3];
+  } else if (strokes == par + 1) {
+    return names[4];
+  } else if (strokes == par + 2) {
+    return names[5];
+  } else if (strokes >= par + 3) {
+    return names[6];
+  }
+}
+
+console.log(golfScore(7,2));
