@@ -641,3 +641,142 @@ function golfScore(par, strokes) {
 }
 
 console.log(golfScore(7,2));
+
+// Switch statements
+
+function caseInSwitch(val) {
+  var answer = "";
+  switch(val) {
+    case 1:
+      answer = "alpha";
+      break;
+    case 2:
+      answer = "beta";
+      break;
+    case 3:
+      answer = "gamma";
+      break;
+    case 4:
+      answer = "delta";
+      break;
+  }
+  return answer;
+}
+console.log(caseInSwitch(6));
+
+// Default option in switch statements
+function switchOfStuff(val) {
+  var answer = "";
+  switch (val) {
+    case "a":
+      answer = "apple";
+      break;
+    case "b":
+        answer = "bird";
+        break;
+    case "c":
+        answer = "cat";
+        break;
+        default:
+          answer = "stuff";
+  }
+  return answer;
+}
+console.log(switchOfStuff("c"));
+
+// Multiple identicaloptions in switch statements
+function sequentialSizes(val) {
+  var answer = "";
+  switch(val) {
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High";
+      break;
+
+  }
+  return answer;
+}
+
+console.log(sequentialSizes(8));
+
+// Replacing if else chains with switch
+function chainToSwitch(val) {
+  var answer = "";
+  switch(val) {
+    case "bob":
+      answer = "Marley";
+      break;
+    case 42:
+      answer = "The Answer";
+      break;
+    case 1:
+      answer = "There is no #1";
+      break;
+    case 99:
+      answer = "Missed me by this much";
+      break;
+    case 7:
+      answer = "Ate Nine";
+      break;   
+  }
+  return answer; 
+}
+console.log(chainToSwitch(7));
+
+// Returning boolean values from functions
+function isLess(a,b) {
+  return a < b;
+}
+console.log(isLess(5,6));
+
+// Returning early pattern from functions
+function abTest(a, b){
+  if (a < 0 || b < 0) {
+    return undefined;
+  }
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+console.log(abTest(-2, 2));
+
+// Counting cards
+
+var count = 0;
+function cc(card) {
+  switch(card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+      
+  }
+  var holdbet = 'Hold';
+  if (count > 0) {
+    holdbet = "Bet"
+  }
+  return count + " " + holdbet;
+}
+cc(2); cc('K'); cc(7); cc('K'); cc('A');
+console.log(cc(4));
+
+// Build javascript objects
