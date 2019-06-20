@@ -780,3 +780,109 @@ cc(2); cc('K'); cc(7); cc('K'); cc('A');
 console.log(cc(4));
 
 // Build javascript objects
+
+var myDog = {
+  "name": "Rantino",
+  "legs": 2,
+  "hands": 2,
+  "friends": ["Some", 5]
+};
+console.log(myDog);
+
+// Accessing object properties with dot notation
+
+var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+console.log(hatValue);
+console.log(shirtValue);
+
+// Accessing object properties with bracket notation
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj['the drink'];
+console.log(entreeValue, drinkValue);
+
+// Accessing object properties with variables
+
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+var playNumber = 16;
+var player = testObj[playNumber];
+console.log(player);
+
+// Updating object properties
+
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 9,
+  "friends": ["freeCode Campers", 100]
+};
+console.log(myDog.name);
+myDog.name = "Frappy Lapper";
+console.log(myDog);
+
+// Add new properties to an object
+var myDog = {
+  "name": "Frappy Lapper",
+  "legs": 4,
+  "tails": 9,
+  "friends": ["freeCodeCamp Campers", 100]
+};
+myDog["bark"] = "arf!";
+console.log(myDog);
+
+// Delete properties from an object
+
+delete myDog.bark;
+console.log(myDog);
+
+// Using objects for lookups
+
+function phoneticLookup(val) {
+  var result = "";
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "frank"
+};
+result = lookup[val];
+return result;
+};
+console.log(phoneticLookup("foxtrot"));
+
+//Testing objects for properties
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  if (myObj.hasOwnProperty(checkProp)) {
+    return myObj[checkProp];
+  } else {
+    return "not found";
+  }
+};
+console.log(checkObj("bed"));
+
+// Manipulating complex objects
+
+
