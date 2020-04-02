@@ -139,11 +139,49 @@ let messages = {
     }
 }
 
-let k = false;
-let l = 20;
-if(a){
+let k = 5;
+let l = 55;
+if(k>3 || l<3){
     console.log('k has a value');
 }
-if(b){
+if(k){
+    console.log('k has a value');
+}
+if(l>10){
     console.log('l has a value');
 }
+if(0){
+    console.log('falsy');
+}
+if(1){
+    console.log('truthy');
+}
+
+if(l>10 && l<30){
+    console.log('l between 10 and 30');
+}else if (k>1 && k<10){
+    console.log('k between 1 and 10');
+}else{
+    console.log('None were true');
+}
+
+if(0){
+    console.log('falsy');
+}else{
+    console.log('was a falsy');
+}
+
+let e;
+if (k>10){
+    e="YES";
+}
+else{
+    e="NO";
+}
+let d = (k>10)?"YES":"NO";
+console.log(e,d);
+
+let age = Number(prompt('How old are you?'));
+console.log(typeof age); 
+let ofAge = age > 18 ?"True can drink":"Under age";
+console.log(ofAge);
