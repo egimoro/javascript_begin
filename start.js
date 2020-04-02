@@ -83,17 +83,67 @@ let a, b, c;
 a = 5;
 b = c = a + 5;
 
-let num = 1;
+let num = 0;
 
 
-testOne();
-testOne();
+testOne(4);
+testOne("New");
 
-function testOne(){
-    let num = 1; 
-    num++
-    console.log('Hello' + num);
+function testOne(val){
+    console.log(val);
+    let hello = val + "Hello world"; 
+    num++;
+    console.log(hello + num);
+    return hello;
 
 }
 
+function test4(x, y = 10){
+    console.log(x);
+    console.log(y);
+    return x*y;
+}
 
+console.log(test4(5));
+
+console.log(test4(5,7));
+
+let myFun1 = function(x=10){
+    return x*10
+}
+
+function myFun2(x=10){
+    return x*10;
+}
+
+let myFun3 = (x=10) => x*10;
+
+myFun5(3,566,6,99);
+
+function myFun5(a,b=2,c=9){
+    console.log(arguments.length);
+
+    console.log(arguments[1]);
+}
+
+let messages = {
+    welcome : ['Welcome first','Welcome second'],
+    hello:function(){
+        console.log('Hello how are you');
+    },
+    goodbye:function(){
+        console.log('Thanks for coming Bye now');
+    },
+    output:function(mes){
+        console.log(mes);
+    }
+}
+
+let k = false;
+let l = 20;
+if(a){
+    console.log('k has a value');
+}
+if(b){
+    console.log('l has a value');
+}
