@@ -885,4 +885,356 @@ console.log(checkObj("bed"));
 
 // Manipulating complex objects
 
+ var myMusic = [
+   {
+     "artist": "Billy Joel",
+     "title":"Piano man",
+     "release_year": 1973,
+     "formats": [
+       "CD",
+       "8T",
+       "LP",
+     ],
+     "gold": true
+   },
+
+   {
+     "artist": "Beau Varted",
+     "title": "Barely an inconvenience",
+     "release_year": 2018,
+     "formats": [
+       "YouTube Video"
+     ]
+   }
+ ];     
+console.log(myMusic);
+
+//Accessing nested objects
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "legos"
+    },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+var gloveBoxContents = myStorage.car.inside["glove box"];
+console.log(gloveBoxContents);
+
+// Accessing nested arrays
+var myPLants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+var secondTree = myPLants[1].list[1];
+console.log(secondTree);
+
+//Record collection
+var collection = {
+  "2548": {
+    "album": "Slippery When Wet",
+    "artist": "Bon Jovi",
+    "tracks": [
+      "Let it Rock",
+      "You Give Love a Bad Name"
+    ]
+  },
+  "2468": {
+    "album": "1999",
+    "artist": "Prince",
+    "tracks": [
+      "1999",
+      "Little Red Corvette"
+    ]
+  },
+  "1245": {
+    "artist": "Robert Palmer",
+    "tracks": []
+  },
+  "5439": {
+    "album": "ABBA Gold"
+  }
+};
+
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateREcords(id, prop, value) {
+  if (value === "") {
+    delete collection[id][prop];
+  } else if (prop == "tracks") {
+    collection[id][prop] == collection[id][prop] || [];
+    collection[id][prop].push(value);
+  } else {
+    collection[id] [prop] = value;
+  }
+  return collection;
+}
+console.log(updateREcords(1245, "tracks", "test"));
+console.log(updateREcords(5439, "artist", "ABBA"));
+
+// Iterate with while loops
+var myArray = [];
+
+var i = 0;
+while(i < 5) {
+  myArray.push(i);
+  i++
+};
+console.log(myArray);
+
+// Iterate with with for loops
+
+var myArray = [];
+for (var i = 1; i < 6; i++) {
+  myArray.push(i);
+};
+
+console.log(myArray);
+
+// Iterate odd numcers with a for loop
+var myArray = [];
+
+for (var i = 1; i < 10; i += 2) {
+  myArray.push(i);
+};
+console.log(myArray);
+
+// Iterate even numcers with a for loop
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+};
+console.log(ourArray);
+
+// Count backwards with a for loop
+
+var ourArray = [];
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+console.log(ourArray);
+
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+};
+console.log(myArray);
+
+//Iterate through an Array with a for loop
+var ourArr = [9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal += ourArr[i];
+}
+console.log(ourTotal);
+
+var myArr = [2, 3, 4, 5, 6];
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+console.log(total);
+
+// Nesting for loops
+
+function multiplyAll(arr) {
+  var product = 1;
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j]
+
+    }
+  }
+  return product;
+}
+var product = multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+console.log(product);
+
+//Iterate with do...while loops
+var myArr = [];
+var i = 10;
+
+do {
+  myArr.push(i);
+  i++;
+} while (i < 5)
+
+console.log(i, myArr);
+
+// Profile lookup
+var contacts = [
+  {
+    "firstName": "Akira",
+    "lastName": "Laine",
+    "number": "0543236543",
+    "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "number": "0994372684",
+    "likes": ["Hogwarts", "Magic", "Hagrid"]
+
+  },
+  {
+    "firstName": "Sherlock",
+    "lastName": "Holmes",
+    "number": "0487345643",
+    "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+    "firstName": "Kristian",
+    "lastName": "Vos",
+    "number": "unknown",
+    "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+
+function lookupProfile(name, prop) {
+  for (var i = 0; i < contacts.length; i++) {
+    if(contacts[i].firstName === name) {
+      return contacts[i][prop] || "No such property";
+    }
+  }
+  return "No such contact";
+}
+var data = lookupProfile("Akiba", "likes");
+console.log(data);
+ 
+ // Generate random fractions
+ function randomfunction() {
+   return Math.random();
+ }
+ console.log(randomfunction());
+
+ // Generate random whole number
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+console.log(randomNumberBetween0and19);
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+};
+
+console.log(randomWholeNum());
+
+// Generate random whole numbers within a range
+
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+var myRandom = randomRange(5, 15);
+console.log(myRandom);
+
+//Use the parseInt function
+function convertToInteger(str) {
+  return parseInt(str);
+}
+console.log(convertToInteger("lop"));
+
+// Use the parseInt function with a Radix (radix base of the number in the string)
+
+function convertToInteger(str) {
+  return parseInt(str, 3);
+}
+console.log(convertToInteger("10111"));
+
+// Use the Conditional (Ternary) operator
+function checkEqual(a, b) {
+  return a === b ? true : false;
+}
+console.log(checkEqual(1,2));
+
+// Use multiple conditional (operator) operations
+function checkSign(num) {
+  return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+console.log(checkSign(10));
+
+// Differences between the var and let keywords
+
+let catName = "Quincy";
+let quote;
+
+catName =  "Beau";
+function catTalk() {
+  "use strict";
+  catName = "Oliver";
+  quote = catName + " says Meow!";
+}
+console.log(catTalk());
+
+// Compare scopes of the var and let keywords
+function checkScope() {
+  "use strict";
+  //let i = "function scope";
+  if (true) {
+    let i = "block scope";
+    console.log("Block scope i is: ", i);
+  }
+  console.log("Function scope i is: ", i);
+  return i;
+}
+console.log(checkScope());
+
+// Declare a read-only variable with the const keyword
+function printManyTimes(str) {
+  "use strict";
+
+  const SENTENCE = str + " is cool!";
+
+  for(let i = 0; i < str.length; i+=2) {
+    console.log(SENTENCE);
+  }
+}
+console.log(printManyTimes("freeCodeCamp"));
+
+// Mutate an array decleared with const
+const s = [5, 7, 2];
+function editInPlace() {
+  "use strict";
+
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+console.log(s);
+
+// Prevent object mutation
+function freezeObj() {
+  "use strict";
+  const MATHS_CONSTANTS = {
+    PI: 3.14
+  };
+  Object.freeze(MATHS_CONSTANTS);
+
+  try {
+    MATHS_CONSTANTS.PI = 99;
+  } catch( ex ) {
+    console.log(ex);
+  }
+  return MATHS_CONSTANTS.PI
+}
+const PI = freezeObj();
 

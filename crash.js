@@ -199,9 +199,74 @@ console.log(todoCompleted);
 
 // conditionals
 
+/*
+
 const x=10;
 
 if(x == 10) {
     console.log('x is 10');
 }
 
+*/
+
+/*
+const x='10';
+
+if(x === 10) {
+    console.log('x is 10');
+}
+*/
+
+/*
+const x=10;
+
+if(x === 10) {
+    console.log('x is 10');
+}
+*/
+
+/*
+const x=20;
+
+if(x === 10) {
+    console.log('x is 10');
+} else {
+    console.log('x is Not 10');
+}
+*/
+
+/*
+const x=20;
+
+if(x === 10) {
+    console.log('x is 10');
+} else {
+    console.log('x is Not 10');
+}
+*/
+
+/*
+const x=6;
+
+if(x === 10) {
+    console.log('x is 10');
+} else if(x>10) {
+    console.log('x is greater 10');
+} else {
+    console.log('x is less than 10')
+}
+*/
+
+//functions
+
+function addNums(num1, num2) {
+    console.log(num1+num2);
+}
+
+addNums(5,4);
+
+function addNums(num1, num2) {
+    return(num1+num2);
+}
+
+ console.log(addNums(5,4));
