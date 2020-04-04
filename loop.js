@@ -105,7 +105,7 @@ clickme.addEventListener('click', myJSON);
 
 function myJSON(){
     console.log('click');
-    const url = 'https://randomuser.me/api'
+    const url = 'https://randomuser.me/api?results=50';
     fetch(url).then(function(response){
         return response.json();
     }).then(function(data){
@@ -119,4 +119,17 @@ function myJSON(){
     }).catch(function(e){
         console.log(e);
     })
+}
+
+const output3 = document.getElementById('output3');
+const clickme1 = document.getElementById('clickme1');
+clickme1.addEventListener('click',myJSON1);
+
+function myJSON1(){
+    const url1 = 'https://randomuser.me/api?results=50';
+    fetch(url1).then(response=>response.json()).then(data=>{
+        let html2 ='';
+        data.results.forEach(person => html2+= '<div>'+person.email+'</div>');
+        output3.innerHTML = html2;
+    }).catch(e=>console.log(e));
 }
