@@ -58,13 +58,65 @@ console.log(newNumbs);
 let MyArr = ["Hello", "World", 6, 2, 55, 2332, 3434];
 
 const output1 = document.getElementById('output1')
-let html = MyArr.map(function(value,index){
-    console.log(value);
-    console.log(index);  
-    return '<div>'+index+' '+value+'</div>';
-
-});
+let html = MyArr.map((value,index)=>'<div>'+index+' '+value+'</div>');
 let myStr1 = html.join('');
 output1.innerHTML = myStr1;
-console.log(myStr1);
-console.log(html);
+
+let testMap = new Map();
+testMap.set('first', 'Dorty');
+testMap.set('last','Kopl');
+console.log(testMap);
+testMap.set('first', 'Lop');
+console.log(testMap.get('first'));
+for(let k of testMap.keys()){
+    console.log(k);
+}
+for(let v of testMap.values()){
+    console.log(v);
+}
+for(let v of testMap){
+    console.log(v);
+}
+for (let[k,v] of testMap){
+    console.log(k);
+    console.log(v);
+}
+
+console.log(testMap.size);
+console.log(testMap.keys());
+console.log(testMap.values());
+
+let mySet = new Set();
+mySet.add('my tester string');
+mySet.add(55);
+mySet.add('hello');
+console.log(mySet);
+
+for(let element of mySet){
+    console.log(element); 
+}
+
+console.log(mySet.size);
+console.log(mySet.has('hello2'));
+
+const output2 = document.getElementById('output2');
+const clickme = document.getElementById('clickme');
+clickme.addEventListener('click', myJSON);
+
+function myJSON(){
+    console.log('click');
+    const url = 'https://randomuser.me/api'
+    fetch(url).then(function(response){
+        return response.json();
+    }).then(function(data){
+        let html1 = '';
+        data.results.forEach(person => {
+            console.log(person);
+            html1 += '<div>'+person.email+'</div>'
+        });
+        output2.innerHTML = html1;
+        console.log(data.results[0].dob.age);
+    }).catch(function(e){
+        console.log(e);
+    })
+}
